@@ -1,0 +1,433 @@
+*,body{
+    max-width:100%;
+    /* height:100%; */
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#topnav{
+    position:relative;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    color:white;
+    background: rgb(65, 0, 0);
+    
+    padding:0;
+    margin:0;
+}
+#topnav #links ul{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+#topnav #links li{
+    text-decoration: none;
+    color:white;
+    display: inline-block;
+    margin-left: 50px;
+    /* background: yellow; */
+    padding:20px 20px;
+    border:2px solid transparent;
+    border-radius:50%;
+    transition: border ease-in-out 300ms,border-radius ease-in-out 300ms;
+}
+#topnav #links li:hover{
+    border:2px solid white;
+    border-radius:0px;
+}
+#topnav #links li a{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color:white;
+}
+#topnav #search{
+    
+    width:50%;
+    height:100%;
+    padding:0;
+    margin:0;
+    
+    /* background: yellow; */
+    /* border:1px solid black; */
+}
+#topnav #search ul{
+    list-style-type: none;
+    margin-left: 20%;
+
+}
+#topnav #search li{
+    display:inline-block; 
+}
+input[type="text"]{
+    width:300px;
+    height:30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 5px;
+}
+input[type="button"]{
+    width:100px;
+    height:35px;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 5px;
+}
+#bg{
+    width:100%;
+    height:100%;
+    background-position: center;
+    background-attachment: scroll;
+    background-image: linear-gradient(180deg,rgba(255, 255, 255, 0), rgba(65,0,0,1) 90%), url("download.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#wrapper{
+    position: relative;
+    width:100%;
+    height:100vh;
+    display: grid;
+    grid-template-columns:60% 40%;
+    /* grid-template-rows: 500px 500px; */
+    
+    background-image: repeating-linear-gradient(135deg,transparent 2px, rgba(65,0,0,0.7) 10px);
+    background-size: 100% 100%;
+
+    animation: bganim 5s linear infinite alternate-reverse;
+}
+@keyframes bganim{
+    0% {background-size: 10% 10%;}
+    100% {background-size: 30% 30%;}  
+}
+#clock-wrapper{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* #clock{
+    height:668px;
+    /* background:red; */
+
+/* #text{
+    background:green; 
+} */
+#chesis{
+    position: absolute;
+    /* height: 48%;   
+    width:21.96%;   */
+    height: 300px;
+    width:300px;
+    border-radius: 50%;
+    background-image: radial-gradient(rgba(12, 12, 12,1),rgba(59, 59, 59,1));
+    border:15px double rgb(65,0,0);
+    box-shadow: inset 0px 0px 10px 5px black;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+
+img{
+    height: 300px;
+    width:300px;
+    transform: scale(0.85);
+}
+
+#hr{
+    position:absolute;
+    background: rgba(0,0,0,0);
+    border:15px solid rgba(0,0,0,0);
+    height: 300px;
+    width:300px;
+    top:50%;
+    left:50%;
+    
+
+    /* animation-name: time;
+    animation-duration: 43200s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+}
+#hr::after{
+    content:"";
+    display:block;
+    position:absolute;
+    background: rgb(65, 0, 0);
+    box-shadow: 0px 0px 4px 2px black;
+    height:110px;
+    width:7px;
+    bottom:40%;
+    left:50%;
+    transform:translateX(-50%);
+    
+}
+#min{
+    position:absolute;
+    background: rgba(196, 101, 101, 0);
+    border:15px solid rgba(0,0,0,0);
+    height: 300px;
+    width:300px;
+    top:50%;
+    left:50%;
+    
+
+    /* animation-name: time;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+    
+}
+#min::after{
+    content:"";
+    display:block;
+    position:absolute;
+    background: white;
+    box-shadow: 0px 0px 4px 2px black;
+    height:140px;
+    width:5px;
+    bottom:40%;
+    left:50%;
+    transform:translateX(-50%);
+    
+}
+
+#sec{
+    position:absolute;
+    background: rgba(7, 199, 94, 0);
+    border:15px solid rgba(0,0,0,0);
+    height: 300px;
+    width:300px;
+    top:50%;
+    left:50%;
+    
+    transition: all cubic-bezier(0.4, 2.08, 0.55, 0.44) 0.2s;
+    
+    
+    /* animation-name: time;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite; */
+}
+#sec::after{
+    content:"";
+    display:block;
+    position:absolute;
+    background: red;
+    box-shadow: 0px 0px 4px 2px black;
+    height:155px;
+    width:2.5px;
+    bottom:40%;
+    left:50%;
+    transform:translateX(-50%);
+
+    
+}
+
+#joint{
+    position:absolute;
+    height:300px;
+    width:300px;
+    border-radius:50%;
+    border:15px solid transparent;
+    background:none;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+#joint:after{
+    content: "";
+    display: block;
+    position:absolute;
+    height:20px;
+    width:20px;
+    border-radius:50%;
+    background-image: radial-gradient(rgba(0,0,0,1),rgb(85, 82, 82,1));
+    box-shadow: 0px 0px 5px 3px black;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+/* @keyframes time{
+    0%      {transform:translate(0%,-50%) rotate(360deg);}
+    100%    {transform:translate(0%,-50%) rotate(360deg);}
+} */
+
+#card{
+    width:80%;
+    height:90%;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border:1px solid black;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color:white;
+}
+#card-header{
+    width:100%;
+    height:35%;
+    font-family: 'Anton', sans-serif;
+    font-size: 6vw;
+    color:white;
+    text-align:center;
+    background: rgb(65, 0, 0,0.7);
+    border-radius: 10px 10px 0 0;
+    
+}
+#card-header p{
+    margin:0;
+    font-family: 'Anton', sans-serif;
+    font-size: 3vw;
+    color:white;
+    text-align:center;
+}
+#card-body{
+    position:relative;
+    width:100%;
+    height:65%;
+    /* background: rgba(0, 255, 76, 0.3); */
+}
+#card-body ul{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    margin:0px;
+    padding:0px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    /* background: green; */
+    list-style-type: none;
+    
+}
+#list{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    top:50%;
+    left:50%;
+    /* background: orange; */
+    transform: translate(-50%,-50%);
+    display: grid;
+    grid-template-rows: 16.666% 16.666% 16.666% 16.666% 16.666% 16.6666%;
+    
+}
+#list li{
+    position: relative;
+    width:100%;
+    height: 85%;
+    font-size: 30px;
+    font-weight: lighter;
+    border: 2px solid white;
+    /* background: black;  */
+    padding:0px;
+    margin:0px;
+    border-radius: 5px;
+}
+.left{
+    position: absolute;
+    width:70%;
+    height: 100%;
+    /* background: red;  */
+    border-radius:5px 0px 0px 5px;
+    
+}
+.right{
+    position: absolute;
+    width:30%;
+    height: 100%;
+    left:70%;
+    background: rgb(65, 0, 0); 
+    border-radius:0px 5px 5px 0px;  
+}
+.okkhor1{
+    position:absolute;
+    top:50%;
+    left:5%;
+    transform: translate(0%,-50%);
+} 
+.okkhor2{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+#onnanno{
+    height:100vh;
+    width:100vw;
+    background:white;
+    opacity:1;
+}
+svg{
+    width:100vw;
+    transform:rotate(180deg);
+}
+
+
+
+.btn{
+    background-color: rgb(65, 0, 0);
+    border-color: rgb(65, 0, 0);
+}
+
+
+
+
+
+
+
+#footer{
+    position: relative;
+    width: 100vw;
+    height: 20vh;
+    background-color: rgb(65, 0, 0);
+}
+
+
+#all-foot{
+    width:60%;
+    height:100%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display:grid;
+    grid-template-columns: 50% 50%;
+
+}
+#foot-img{
+    position:relative;
+    height:20vh;
+}
+
+#foot-text{
+    position:relative;
+    text-align: right;
+}
+#foot-img h4{
+    position: absolute;
+    top:50%;
+    left:0%;
+    color:rgb(255, 255, 255);
+    transform: translate(0%,-50%);
+}
+#foot-text #foot-in-text{
+    position: absolute;
+    top:50%;
+    right:0%;
+    color:rgb(255, 255, 255);
+    transform: translate(0%,-50%);
+}
+#foot-text #foot-in-text a{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    margin-left: 2em;
+}
+#foot-text #foot-in-text a:hover{
+    text-decoration: underline;
+    color:rgb(255, 255, 255);
+    margin-left: 2em;
+}
