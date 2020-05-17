@@ -355,22 +355,113 @@ img{
     left:50%;
     transform: translate(-50%,-50%);
 }
-#onnanno{
+#onnanno1, #onnanno2, #onnanno3, #onnanno4, #onnanno5{
     height:100vh;
     width:100vw;
     background:white;
-    opacity:1;
+    position: relative;
+    
 }
+
+
 svg{
     width:100vw;
     transform:rotate(180deg);
+    margin-bottom:-5%;
 }
+.wash-hand, .social-distancing, .medical-care{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    align-items: center;
+}
+.social-distancing, .medical-care{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(240, 240, 240);
+    height:100%;
+    
+}
+.social-distancing-out{
+    height:70%;
+    width:100%;
+    top:50%;
+    transform:translateY(-50%);
+    position:relative;
+}
+.social-distancing-out::after{
+    background-color: rgba(240, 240, 240);
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:100%;
+    display:block;
+    content:"";
+    clip-path: polygon(0 0, 100% 20%, 100% 0);
+}
+.medical-care{
+    background:white;
+}
+
+.text[data-scroll="in"]{
+    width:60%;
+    opacity:1;
+    transition: opacity ease-in 0.5s;
+}
+.text[data-scroll="out"]{
+    opacity:0;
+    width:60%;
+    transition: opacity ease-in 0.5s;
+}
+
+
+.text+img[data-scroll="in"]{
+    opacity:1;
+    transition: opacity ease-in 0.5s;
+}
+.text+img[data-scroll="out"]{
+    opacity:0;
+    transition: opacity ease-in 0.5s;
+}
+
+#onnanno5::before{
+    clip-path: polygon(0 0, 0 30%, 100% 0);
+    background-color: white;
+    display:block;
+    content:"";
+    width:100%;
+    height:50%;
+}
+#onnanno5{
+    height:100vh;
+    width:100vw;
+    
+    background-color: rgb(240, 240, 240);
+    
+}
+.wrapper{
+    transform:translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 
 
 
 .btn{
     background-color: rgb(65, 0, 0);
     border-color: rgb(65, 0, 0);
+}
+.card{
+    width:100%;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    
 }
 
 
