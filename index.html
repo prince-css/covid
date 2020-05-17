@@ -20,7 +20,12 @@
 		<script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
 	</head>
 	<body>
-		<div id="topnav">
+		<header>
+			<h1>
+				Scroll Down !!!
+			</h1>
+		</header>
+		<nav class="topnav">
 			<div id="links">
 				<ul>
 					<li><a href="#">Home</a></li>
@@ -34,7 +39,7 @@
 					<li><input type="button" id="input" value="Search" /></li>
 				</ul>
 			</div>
-		</div>
+		</nav>
 
 		<div id="bg">
 			<div id="wrapper">
@@ -242,6 +247,11 @@
 				</div>
 			</div>
 		</div>
+
+
+
+
+		<script src="intersection.js"></script>
 		<script>
 			ScrollOut({
 				targets: ".text,img"
